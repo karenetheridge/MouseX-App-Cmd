@@ -1,7 +1,7 @@
 package Test::MyCmd::Command::justusage;
-use Moose;
+use Mouse;
 
-extends 'MooseX::App::Cmd::Command';
+extends 'MouseX::App::Cmd::Command';
 
 =head1 NAME
 

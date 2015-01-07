@@ -1,9 +1,9 @@
 package Test::ConfigFromFile::Command::moo;
-use Moose;
+use Mouse;
 use YAML();
 
-extends 'MooseX::App::Cmd::Command';
-with 'MooseX::ConfigFromFile';
+extends 'MouseX::App::Cmd::Command';
+with 'MouseX::ConfigFromFile';
 
 =head1 NAME
 

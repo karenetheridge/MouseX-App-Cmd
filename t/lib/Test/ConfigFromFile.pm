@@ -1,6 +1,6 @@
 package Test::ConfigFromFile;
-use Moose;
+use Mouse;
 
-extends 'MooseX::App::Cmd';
+extends 'MouseX::App::Cmd';
 
 1;

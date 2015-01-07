@@ -1,13 +1,13 @@
 use 5.006;
 
-package MooseX::App::Cmd::Command;
-use Moose;
+package MouseX::App::Cmd::Command;
+use Mouse;
 
 # VERSION
 use Getopt::Long::Descriptive ();
 use namespace::clean -except => 'meta';
-extends 'Moose::Object', 'App::Cmd::Command';
-with 'MooseX::Getopt';
+extends 'Mouse::Object', 'App::Cmd::Command';
+with 'MouseX::Getopt';
 
 has usage => (
     is        => 'ro',
@@ -20,7 +20,7 @@ has app => (
     is        => 'ro',
     required  => 1,
     metaclass => 'NoGetopt',
-    isa       => 'MooseX::App::Cmd',
+    isa       => 'MouseX::App::Cmd',
 );
 
 override _process_args => sub {
@@ -28,7 +28,7 @@ override _process_args => sub {
     local @ARGV = @{$args};
 
     my $config_from_file;
-    if ( $class->meta->does_role('MooseX::ConfigFromFile') ) {
+    if ( $class->meta->does_role('MouseX::ConfigFromFile') ) {
         local @ARGV = @ARGV;
 
         my $configfile;
@@ -60,7 +60,7 @@ override _process_args => sub {
         $processed{argv},
         usage => $processed{usage},
 
-        # params from CLI are also fields in MooseX::Getopt
+        # params from CLI are also fields in MouseX::Getopt
         $config_from_file
         ? ( %{$config_from_file}, %{ $processed{params} } )
         : %{ $processed{params} },
@@ -75,16 +75,16 @@ sub _usage_format {    ## no critic (ProhibitUnusedPrivateSubroutines)
 __PACKAGE__->meta->make_immutable();
 1;
 
-# ABSTRACT: Base class for MooseX::Getopt based App::Cmd::Commands
+# ABSTRACT: Base class for MouseX::Getopt based App::Cmd::Commands
 
 =head1 SYNOPSIS
 
-    use Moose;
+    use Mouse;
 
-    extends qw(MooseX::App::Cmd::Command);
+    extends qw(MouseX::App::Cmd::Command);
 
     # no need to set opt_spec
-    # see MooseX::Getopt for documentation on how to specify options
+    # see MouseX::Getopt for documentation on how to specify options
     has option_field => (
         isa => 'Str',
         is  => 'rw',
@@ -101,15 +101,15 @@ __PACKAGE__->meta->make_immutable();
 
 This is a replacement base class for L<App::Cmd::Command|App::Cmd::Command>
 classes that includes
-L<MooseX::Getopt|MooseX::Getopt> and the glue to combine the two.
+L<MouseX::Getopt|MouseX::Getopt> and the glue to combine the two.
 
 =method _process_args
 
 Replaces L<App::Cmd::Command|App::Cmd::Command>'s argument processing in favor
-of L<MooseX::Getopt|MooseX::Getopt> based processing.
+of L<MouseX::Getopt|MouseX::Getopt> based processing.
 
-If your class does the L<MooseX::ConfigFromFile|MooseX::ConfigFromFile> role
+If your class does the L<MouseX::ConfigFromFile|MouseX::ConfigFromFile> role
 (or any of its consuming roles like
-L<MooseX::SimpleConfig|MooseX::SimpleConfig>), this will provide an additional
+L<MouseX::SimpleConfig|MouseX::SimpleConfig>), this will provide an additional
 C<--configfile> command line option for loading options from a configuration
 file.

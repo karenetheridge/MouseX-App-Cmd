@@ -1,13 +1,13 @@
 use 5.006;
 
-package MooseX::App::Cmd;
-use Moose;
+package MouseX::App::Cmd;
+use Mouse;
 use English '-no_match_vars';
 use File::Basename ();
 
 # VERSION
 use namespace::clean -except => 'meta';
-extends 'Moose::Object', 'App::Cmd';
+extends 'Mouse::Object', 'App::Cmd';
 
 sub BUILDARGS {
     my ( undef, @arg ) = @_;
@@ -29,20 +29,20 @@ sub BUILD {
 __PACKAGE__->meta->make_immutable();
 1;
 
-# ABSTRACT: Mashes up MooseX::Getopt and App::Cmd
+# ABSTRACT: Mashes up MouseX::Getopt and App::Cmd
 
 =head1 SYNOPSIS
 
     package YourApp::Cmd;
-    use Moose;
+    use Mouse;
 
-    extends qw(MooseX::App::Cmd);
+    extends qw(MouseX::App::Cmd);
 
 
     package YourApp::Cmd::Command::blort;
-    use Moose;
+    use Mouse;
 
-    extends qw(MooseX::App::Cmd::Command);
+    extends qw(MouseX::App::Cmd::Command);
 
     has blortex => (
         traits => [qw(Getopt)],
@@ -74,15 +74,15 @@ __PACKAGE__->meta->make_immutable();
 
 =head1 DESCRIPTION
 
-This module marries L<App::Cmd|App::Cmd> with L<MooseX::Getopt|MooseX::Getopt>.
+This module marries L<App::Cmd|App::Cmd> with L<MouseX::Getopt|MouseX::Getopt>.
 
 Use it like L<App::Cmd|App::Cmd> advises (especially see
 L<App::Cmd::Tutorial|App::Cmd::Tutorial>), swapping
 L<App::Cmd::Command|App::Cmd::Command> for
-L<MooseX::App::Cmd::Command|MooseX::App::Cmd::Command>.
+L<MouseX::App::Cmd::Command|MouseX::App::Cmd::Command>.
 
-Then you can write your moose commands as Moose classes, with
-L<MooseX::Getopt|MooseX::Getopt>
+Then you can write your moose commands as Mouse classes, with
+L<MouseX::Getopt|MouseX::Getopt>
 defining the options for you instead of C<opt_spec> returning a
 L<Getopt::Long::Descriptive|Getopt::Long::Descriptive> spec.
 
@@ -99,8 +99,8 @@ L<App::Cmd|App::Cmd> attributes as per its documentation.
 
 =item L<App::Cmd::Tutorial|App::Cmd::Tutorial>
 
-=item L<MooseX::Getopt|MooseX::Getopt>
+=item L<MouseX::Getopt|MouseX::Getopt>
 
-=item L<MooseX::App::Cmd::Command|MooseX::App::Cmd::Command>
+=item L<MouseX::App::Cmd::Command|MouseX::App::Cmd::Command>
 
 =back

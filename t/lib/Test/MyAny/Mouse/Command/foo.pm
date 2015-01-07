@@ -1,7 +1,7 @@
-package Test::MyAny::Moose::Command::foo;
-use Moose;
+package Test::MyAny::Mouse::Command::foo;
+use Mouse;
 
-extends 'MooseX::App::Cmd::Command';
+extends 'MouseX::App::Cmd::Command';
 
 has bar => (
     isa           => 'Str',
@@ -13,7 +13,7 @@ has bar => (
 sub execute {
     my ( $self, $opt, $arg ) = @_;
 
-    die 'my Moose bar is ', $self->bar . "\n";
+    die 'my Mouse bar is ', $self->bar . "\n";
 }
 
 1;

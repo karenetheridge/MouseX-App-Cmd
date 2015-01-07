@@ -3,13 +3,13 @@
 use strict;
 use warnings;
 use Test::More;
-use Moose;
+use Mouse;
 
 BEGIN {
-    eval 'require MooseX::ConfigFromFile; require YAML;';
+    eval 'require MouseX::ConfigFromFile; require YAML;';
     if ($@) {
         plan skip_all =>
-            'These tests require MooseX::ConfigFromFile and YAML';
+            'These tests require MouseX::ConfigFromFile and YAML';
     }
     else {
         plan tests => 3;
