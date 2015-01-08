@@ -5,7 +5,7 @@ use Mouse;
 
 # VERSION
 use Getopt::Long::Descriptive ();
-use namespace::clean -except => 'meta';
+use namespace::autoclean;
 extends 'Mouse::Object', 'App::Cmd::Command';
 with 'MouseX::Getopt';
 

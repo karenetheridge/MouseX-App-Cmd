@@ -6,7 +6,7 @@ use English '-no_match_vars';
 use File::Basename ();
 
 # VERSION
-use namespace::clean -except => 'meta';
+use namespace::autoclean;
 extends 'Mouse::Object', 'App::Cmd';
 
 sub BUILDARGS {
