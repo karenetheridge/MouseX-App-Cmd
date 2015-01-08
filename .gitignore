@@ -3,5 +3,5 @@
 /.build/
 !/.gitignore
 /.latest
-/MooseX-App-Cmd-*/
-/MooseX-App-Cmd-*.tar.gz
+/MouseX-App-Cmd-*/
+/MouseX-App-Cmd-*.tar.gz
