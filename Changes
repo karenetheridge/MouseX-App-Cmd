@@ -1,4 +1,4 @@
-Revision history for MouseX-App-Cmd
+Revision history for {{$dist->name}}
 
 {{$NEXT}}
     - Split out MouseX-App-Cmd from MooseX-App-Cmd
