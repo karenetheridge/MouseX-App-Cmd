@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.30      20152015-01-08 04:36:08Z
     - Split out MouseX-App-Cmd from MooseX-App-Cmd
 
 Remaining changes are from MooseX-App-Cmd change log

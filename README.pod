@@ -1,30 +1,29 @@
 =pod
 
-=for :stopwords Yuval Kogman Guillermo Roditi Daisuke Maki Vladimir Timofeev Bruno Vecchi
-Offer Kaye Mark Gardner Yanick Champoux Dann Ken Crowell Michael Joyce
-Infinity Interactive, cpan testmatrix url annocpan anno bugtracker rt
-cpants kwalitee diff irc mailto metadata placeholders metacpan
+=encoding UTF-8
+
+=for :stopwords יובל קוג'מן (Yuval Kogman) Infinity Interactive, Inc.
 
 =head1 NAME
 
-MooseX::App::Cmd - Mashes up MooseX::Getopt and App::Cmd
+MouseX::App::Cmd - Mashes up MouseX::Getopt and App::Cmd
 
 =head1 VERSION
 
-version 0.29
+version 0.30
 
 =head1 SYNOPSIS
 
     package YourApp::Cmd;
-    use Moose;
+    use Mouse;
 
-    extends qw(MooseX::App::Cmd);
+    extends qw(MouseX::App::Cmd);
 
 
     package YourApp::Cmd::Command::blort;
-    use Moose;
+    use Mouse;
 
-    extends qw(MooseX::App::Cmd::Command);
+    extends qw(MouseX::App::Cmd::Command);
 
     has blortex => (
         traits => [qw(Getopt)],
@@ -56,15 +55,15 @@ version 0.29
 
 =head1 DESCRIPTION
 
-This module marries L<App::Cmd|App::Cmd> with L<MooseX::Getopt|MooseX::Getopt>.
+This module marries L<App::Cmd|App::Cmd> with L<MouseX::Getopt|MouseX::Getopt>.
 
 Use it like L<App::Cmd|App::Cmd> advises (especially see
 L<App::Cmd::Tutorial|App::Cmd::Tutorial>), swapping
 L<App::Cmd::Command|App::Cmd::Command> for
-L<MooseX::App::Cmd::Command|MooseX::App::Cmd::Command>.
+L<MouseX::App::Cmd::Command|MouseX::App::Cmd::Command>.
 
-Then you can write your moose commands as Moose classes, with
-L<MooseX::Getopt|MooseX::Getopt>
+Then you can write your moose commands as Mouse classes, with
+L<MouseX::Getopt|MouseX::Getopt>
 defining the options for you instead of C<opt_spec> returning a
 L<Getopt::Long::Descriptive|Getopt::Long::Descriptive> spec.
 
@@ -83,128 +82,28 @@ L<App::Cmd|App::Cmd> attributes as per its documentation.
 
 =item L<App::Cmd::Tutorial|App::Cmd::Tutorial>
 
-=item L<MooseX::Getopt|MooseX::Getopt>
+=item L<MouseX::Getopt|MouseX::Getopt>
 
-=item L<MooseX::App::Cmd::Command|MooseX::App::Cmd::Command>
-
-=back
-
-=head1 SUPPORT
-
-=head2 Perldoc
-
-You can find documentation for this module with the perldoc command.
-
-  perldoc MooseX::App::Cmd
-
-=head2 Websites
-
-The following websites have more information about this module, and may be of help to you. As always,
-in addition to those websites please use your favorite search engine to discover more resources.
-
-=over 4
-
-=item *
-
-Search CPAN
-
-The default CPAN search engine, useful to view POD in HTML format.
-
-L<http://search.cpan.org/dist/MooseX-App-Cmd>
-
-=item *
-
-AnnoCPAN
-
-The AnnoCPAN is a website that allows community annotations of Perl module documentation.
-
-L<http://annocpan.org/dist/MooseX-App-Cmd>
-
-=item *
-
-CPAN Ratings
-
-The CPAN Ratings is a website that allows community ratings and reviews of Perl modules.
-
-L<http://cpanratings.perl.org/d/MooseX-App-Cmd>
-
-=item *
-
-CPANTS
-
-The CPANTS is a website that analyzes the Kwalitee ( code metrics ) of a distribution.
-
-L<http://cpants.cpanauthors.org/dist/MooseX-App-Cmd>
-
-=item *
-
-CPAN Testers
-
-The CPAN Testers is a network of smokers who run automated tests on uploaded CPAN distributions.
-
-L<http://www.cpantesters.org/distro/M/MooseX-App-Cmd>
-
-=item *
-
-CPAN Testers Matrix
-
-The CPAN Testers Matrix is a website that provides a visual overview of the test results for a distribution on various Perls/platforms.
-
-L<http://matrix.cpantesters.org/?dist=MooseX-App-Cmd>
-
-=item *
-
-CPAN Testers Dependencies
-
-The CPAN Testers Dependencies is a website that shows a chart of the test results of all dependencies for a distribution.
-
-L<http://deps.cpantesters.org/?module=MooseX::App::Cmd>
+=item L<MouseX::App::Cmd::Command|MouseX::App::Cmd::Command>
 
 =back
 
-=head2 Bugs / Feature Requests
+=head1 AUTHOR
 
-Please report any bugs or feature requests through the web
-interface at L<https://rt.cpan.org/Public/Dist/Display.html?Name=MooseX-App-Cmd>. You will be automatically notified of any
-progress on the request by the system.
+יובל קוג'מן (Yuval Kogman) <nothingmuch@woobling.org>
 
-=head2 Source Code
+=head1 COPYRIGHT AND LICENSE
 
-The code is open to the world, and available for you to hack on. Please feel free to browse it and play
-with it, or whatever. If you want to contribute patches, please send me a diff or prod me to pull
-from your repository :)
+This software is copyright (c) 2008 by Infinity Interactive, Inc..
 
-L<https://github.com/moose/MooseX-App-Cmd>
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
-  git clone git://github.com/moose/MooseX-App-Cmd.git
+=head1 CONTRIBUTORS
 
-=head1 AUTHORS
+=for stopwords Mark Gardner Karen Etheridge Yuval Kogman Graham Knop Daisuke Maki Offer Kaye vovkasm Ken Crowell brunov Guillermo Roditi Dann Michael Joyce
 
 =over 4
-
-=item *
-
-Yuval Kogman <nothingmuch@woobling.org>
-
-=item *
-
-Guillermo Roditi <groditi@cpan.org>
-
-=item *
-
-Daisuke Maki <dmaki@cpan.org>
-
-=item *
-
-Vladimir Timofeev <vovkasm@gmail.com>
-
-=item *
-
-Bruno Vecchi <brunov@cpan.org>
-
-=item *
-
-Offer Kaye <offerk@cpan.org>
 
 =item *
 
@@ -212,11 +111,31 @@ Mark Gardner <mjgardner@cpan.org>
 
 =item *
 
-Yanick Champoux <yanick+cpan@babyl.dyndns.org>
+Mark Gardner <gardnerm@gsicommerce.com>
 
 =item *
 
-Dann <techmemo@gmail.com>
+Karen Etheridge <ether@cpan.org>
+
+=item *
+
+Yuval Kogman <nothingmuch@woobling.org>
+
+=item *
+
+Graham Knop <haarg@haarg.org>
+
+=item *
+
+Daisuke Maki <dmaki@cpan.org>
+
+=item *
+
+Offer Kaye <offer.kaye@gmail.com>
+
+=item *
+
+vovkasm <vovkasm@gmail.com>
 
 =item *
 
@@ -224,15 +143,24 @@ Ken Crowell <oeuftete@gmail.com>
 
 =item *
 
+brunov <vecchi.b@gmail.com>
+
+=item *
+
+Mark Gardner <mjg+github@phoenixtrap.com>
+
+=item *
+
+Guillermo Roditi <groditi@gmail.com>
+
+=item *
+
+Dann <techmemo@gmail.com>
+
+=item *
+
 Michael Joyce <ubermichael@gmail.com>
 
 =back
-
-=head1 COPYRIGHT AND LICENSE
-
-This software is copyright (c) 2015 by Infinity Interactive, Yuval Kogman.
-
-This is free software; you can redistribute it and/or modify it under
-the same terms as the Perl 5 programming language system itself.
 
 =cut
